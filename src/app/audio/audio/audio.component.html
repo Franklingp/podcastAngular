@@ -1,0 +1,10 @@
+<section *ngIf="this.single !== null">
+	<img src="{{this.single.image}}" alt="Single Image">
+	<h3>{{this.single.title}}</h3>
+		<br>
+	<span>{{this.single.artist}}</span>
+		<br>
+	<audio src="{{this.single.location}}" autobuffer autoloop loop controls></audio>
+	<br>
+	<span>{{this.single.album}}</span>
+</section>

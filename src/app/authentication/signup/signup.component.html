@@ -1,0 +1,31 @@
+<!--Here is the form to sign up-->
+<h1>Registrate</h1>
+
+<div *ngIf='this.error' class="alert alert-warning" role="alert">
+ 	Ha ocurrido un error en el servidor, vuelve a intentarlo.
+</div>
+
+<form [formGroup]='userForm' (submit)="onSubmit(userForm.value)">
+  <div class="form-group">
+    <label for="name">Nombre</label>
+    <input formControlName='name' type="text" class="form-control {{this.validate('name')}}" id="name" placeholder="Nombre">
+  </div>
+  <div class="form-group">
+    <label for="lastname">Apellido</label>
+    <input formControlName='lastname' type="text" class="form-control {{this.validate('lastname')}}" id="lastname" placeholder="Apellido">
+  </div>
+  <div class="form-group">
+    <label for="email">Correo electronico</label>
+    <input formControlName="email" type="email" class="form-control {{this.validate('email')}}" id="email" placeholder="Correo electronico">
+  </div>
+  <div class="form-group">
+    <label for="nick">Usuario</label>
+    <input formControlName="nick" type="text" class="form-control {{this.validate('nick')}}" id="nick" placeholder="Usuario">
+  </div>
+  <div class="form-group">
+    <label for="password">Contrasena</label>
+    <input formControlName="password" type="password" class="form-control {{this.validate('password')}}" id="password" placeholder="Contrasena">
+  </div>
+
+  <button type="submit" class="btn btn-primary" >Primary</button>
+</form>

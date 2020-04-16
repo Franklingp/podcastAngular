@@ -1,0 +1,27 @@
+<h1>Iniciar Sesion</h1>
+
+<br>
+
+<div *ngIf="this.error !== ''" class="alert alert-warning" role="alert">
+  {{this.error}}
+</div>
+
+
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(form)">
+  <div class="form-group">
+	<div class="alert alert-danger" role="alert" *ngIf="email.touched && email.invalid">
+	  Debe introducir un correo electronico valido.
+	</div>
+    <label for="email">Correo Electronico</label>
+    <input #email="ngModel" name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" [(ngModel)]="form.primaryKey" required email>
+    <small id="emailHelp" class="form-text text-muted">Nosotros nunca compartiremos tu correo con nadie mas.</small>
+  </div>
+  <div class="form-group">
+  	<div class="alert alert-danger" role="alert" *ngIf="password.touched && password.invalid">
+	  El campo es requerido
+	</div>
+    <label for="exampleInputPassword1">Contrasena</label>
+    <input #password="ngModel" name="password" type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="form.password" required>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!loginForm.form.valid">Submit</button>
+</form>

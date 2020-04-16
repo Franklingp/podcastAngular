@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Arista</th>
+      <th scope="col">Album</th>
+      <th scope="col">Fecha</th>
+    </tr>
+  </thead>
+  <tbody *ngIf = "this.audio !== null">
+
+    <tr *ngFor="let single of audio">
+      <th scope="row">#</th>
+      <td><a [routerLink]="['single', single._id]">{{single.title}}</a></td>
+	  <td><a href="#" onclick='return false' (click)="getAudio('artist', single.artist)">{{single.artist}}</a></td>
+	  <td><a href="#" onclick='return false' (click)="getAudio('album', single.album)">{{single.album}}</a></td>
+	  <td>{{single.date}}</td>
+    </tr>
+
+  </tbody>
+</table>

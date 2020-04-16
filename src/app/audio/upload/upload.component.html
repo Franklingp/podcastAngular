@@ -1,0 +1,41 @@
+<!-- This section is to upload a new single to the server -->
+<section>
+	<h1>Subir un nuevo audio</h1>
+
+	<form [formGroup]='singleForm' (submit)='onSubmit(singleForm.value)'>
+	  <div class="form-group">
+	    <label for="title">Titulo</label>
+	    <input formControlName=title type="text" class="form-control {{this.validateControl('title')}}" id="title" aria-describedby="emailHelp">
+	  </div>
+	  <div class="form-group">
+	    <label for="album">Album</label>
+	    <input formControlName=album type="text" class="form-control {{this.validateControl('album')}}" id="album">
+	  </div>
+	  <div class="form-group">
+	    <label for="artist">Artista</label>
+	    <input formControlName=artist type="text" class="form-control {{this.validateControl('artist')}}" id="artist">
+	  </div>
+
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		    <span class="input-group-text" id="inputGroupFileAddon01">Subir imagen</span>
+		  </div>
+		  <div class="custom-file">
+		    <input (change)='this.tempFile($event, "image")' formControlName='image' type="file" class="custom-file-input {{this.validateControl('image')}}" id="image" aria-describedby="inputGroupFileAddon01">
+		    <label class="custom-file-label" for="image">Seleccione imagen</label>
+		  </div>
+		</div>
+
+	  <div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		    <span class="input-group-text" id="inputGroupFileAddon01">Subir audio</span>
+		  </div>
+		  <div class="custom-file">
+		    <input (change)='this.tempFile($event,"audio")' formControlName='audio' type="file" class="custom-file-input {{this.validateControl('audio')}}" id="audio" aria-describedby="inputGroupFileAddon01">
+		    <label class="custom-file-label" for="audio">Seleccione audio</label>
+		  </div>
+		</div>
+
+	  <button type="submit" class="btn btn-primary" [disabled]=singleForm.invalid>Submit</button>
+	</form>
+</section>
