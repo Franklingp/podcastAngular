@@ -1,6 +1,6 @@
 # Podcast Angular
 
-_Este proyecto es el cliente de una plataforma de reproduccion de audio, el backend lo puedes conseguir [Aqui](https://github.com/Franklingp/podcastBackend). Este proyecto permite subir datos y archivos de audio e imagen a un servidor para posteriormente ser reroducidos desde el navegador, tambien incluye un sistema de autenticacion via token para poder tener acceso al contenido._
+_Este proyecto es el cliente de una plataforma de reproduccion de audio, el backend lo puedes conseguir [Aqui](https://github.com/Franklingp/podcastBackend). Este proyecto permite subir datos y archivos de audio e imagen a un servidor para posteriormente ser reroducidos desde el navegador, tambien incluye un sistema de autenticacion via token para poder tener acceso al contenido. *(Este proyecto se encuentra aun en fase de desarrollo)*_
 
 ### Pre-requisitos 📋
 
